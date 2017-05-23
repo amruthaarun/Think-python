@@ -1,3 +1,11 @@
+def reverse_lookup(d, v):
+	l=[]
+	for k in d:
+		if d[k]==v:
+			l.append(k)
+	return l	
+
+
 def histogram(s):
     d = dict()
     for c in s:
@@ -6,12 +14,6 @@ def histogram(s):
         else:
             d[c] += 1
     return d
-d=histogram('amruth')
+d=histogram('amrutha')
+print reverse_lookup(d,1)
 
-def has_duplicates(t):
-	for d in t:
-		val=t[d]
-		if val>1:
-			return True
-	return False
-print has_duplicates(d)

@@ -5,13 +5,14 @@ def histogram(s):
             d[c] = 1
         else:
             d[c] += 1
+	print d
     return d
-d=histogram('amruth')
 
-def has_duplicates(t):
-	for d in t:
-		val=t[d]
-		if val>1:
-			return True
-	return False
-print has_duplicates(d)
+def print_hist(h):
+	d=h.keys()
+	d.sort()
+	for k in d:
+		print k,h.get(k,0)
+
+h=histogram('amrutha')
+print_hist(h)
