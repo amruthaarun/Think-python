@@ -1,26 +1,15 @@
-import time
-known = {0:0, 1:1}
+class Time(object):
+	def time_to_int(time):
+	    minutes = time.hour * 60 + time.minute
+	    seconds = minutes * 60 + time.second
+	    return seconds
+	def print_time(t):
+		print '%.2d : %.2d : %.2d'%(t.hour,t.minute,t.second)
 
-def fibonacci1(n):
-    if n in known:
-        return known[n]
+time1 = Time()
+time1.hour = 11
+time1.minute = 59
+time1.second = 30
+time1.print_time()
+print time1.time_to_int()
 
-    res = fibonacci1(n-1) + fibonacci1(n-2)
-    known[n] = res
-    return res
-def fibonacci2(n):
-    if n == 0:
-        return 0
-    elif  n == 1:
-        return 1
-    else:
-        return fibonacci2(n-1) + fibonacci2(n-2)
-
-stime=time.time()
-print fibonacci1(5)
-etime=time.time()-stime
-print "time to execute fib 1 is",etime
-stime=time.time()
-print fibonacci2(5)
-etime=time.time()-stime
-print "time to execute fib 2 is",etime
